@@ -6,6 +6,8 @@ import guru.springframework.sfgpetclinic.model.Owner;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {

@@ -6,6 +6,8 @@ import guru.springframework.sfgpetclinic.model.Vet;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
