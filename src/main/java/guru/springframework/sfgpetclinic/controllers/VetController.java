@@ -12,7 +12,7 @@ public class VetController {
 	
     public VetController(VetService service) {
 		this.vetService = service;
-	}
+	} 
 
 	@RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
     public String listVets(Model model )
