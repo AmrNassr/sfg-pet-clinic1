@@ -6,11 +6,22 @@
 </head>
 <body>
     <h1 th:text="'Home Page'">Home Page</h1>
-    <h2 th:text="Welcome">Welcome</h2>
-
     <div class="row">
         <div class="col-md-12">
-            <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+            <img class="img-responsive" 
+            src="../static/resources/images/pets.png" 
+            th:src="@{/resources/images/pets.png}"
+            style="
+            margin: 12px 0 6px;
+  width: 600px;
+  background-size: contain;
+  background-size: 100%;, background-size: 100vw 100vh;
+  height: 500px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0; 
+            "
+            />
         </div>
     </div>
 
