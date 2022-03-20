@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import guru.springframework.sfgpetclinic.Services.OwnerService;
 import guru.springframework.sfgpetclinic.Services.PetService;
+import guru.springframework.sfgpetclinic.Services.PetTypeService;
 import guru.springframework.sfgpetclinic.Services.VetService;
 import guru.springframework.sfgpetclinic.Services.map.OwnerServiceMap;
 import guru.springframework.sfgpetclinic.Services.map.PetServiceMap;
@@ -12,19 +13,28 @@ import guru.springframework.sfgpetclinic.Services.map.VetServiceMap;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.model.Vet;
+import guru.springframework.sfgpetclinic.model.PetType;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
+	private final PetTypeService petTypeService;
 	
-	public DataLoader(OwnerService ownerService, VetService vetService) {
+	
+	public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petTypeService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
+		this.petTypeService=petTypeService;
 	}
 	
 	@Override
 	public void run(String... args) throws Exception {
+		PetType dog = new PetType();
+		dog.setName("Dog");
+		petTypeService.save(dog);
+		
+		
 		 Owner owner1 = new Owner();
 	        owner1.setFirstName("Michael");
 	        owner1.setLastName("Weston");
