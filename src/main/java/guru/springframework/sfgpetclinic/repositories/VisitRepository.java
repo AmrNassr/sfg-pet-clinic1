@@ -1,5 +1,9 @@
 package guru.springframework.sfgpetclinic.repositories;
 
-public interface VisitRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import guru.springframework.sfgpetclinic.model.Visit;
+
+public interface VisitRepository extends CrudRepository<Visit, Long>{
 
 }
